@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Website with Chatbot</title>
+    <style>
+        /* Force the chatbot container to the bottom-right corner */
+        #VG_OVERLAY_CONTAINER {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: auto;
+            height: auto;
+            z-index: 9999; /* Ensure it appears above other elements */
+        }
+    </style>
 </head>
 <body>
     <div id="VG_OVERLAY_CONTAINER">
@@ -16,7 +27,7 @@
             window.VG_CONFIG = {
                 ID: "sjuch6uz5a33kbe8", // Agent ID
                 region: 'eu', // 'eu' or 'na' for Europe and North America regions
-                render: 'bottom-right', // options: 'popup', 'full-width', or 'bottom-right'
+                render: 'popup', // 'popup' or 'bottom-right'
                 stylesheets: [
                     "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
                 ]
