@@ -1,30 +1,42 @@
-<div style="width: 500px; height: 500px;" id="VG_OVERLAY_CONTAINER">
-    <!-- TIXAE Agents widget will render here. Set render to 'full-width' to display the chatbot directly without a popup. -->
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Website with Chatbot</title>
+</head>
+<body>
+    <div style="width: 500px; height: 500px;" id="VG_OVERLAY_CONTAINER">
+        <!-- Here is where TIXAE Agents renders the widget. -->
+        <!-- Set width and height to 500px as an example after changing render to 'full-width' -->
+    </div>
 
-<script>
-    (function() {
-        window.VG_CONFIG = {
-            ID: "sjuch6uz5a33kbe8", // YOUR AGENT ID
-            region: 'eu', // YOUR ACCOUNT REGION 
-            render: 'bottom-right', // Options: 'full-width', 'bottom-left', 'bottom-right'
-            stylesheets: [
-                "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
-                // Add custom stylesheets if needed, e.g., '/public/your-file.css'
-            ],
-            // Optional user data can be added here
-            // user: {
-            //     name: 'John Doe',
-            //     email: 'johndoe@gmail.com',
-            //     phone: '+1234567890',
-            // },
-            // userID: 'USER_ID', // Use your own user_id if needed
-            // autostart: true, // Set to true to autostart chatbot with a proactive message
-        };
-
-        var VG_SCRIPT = document.createElement("script");
-        VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
-        VG_SCRIPT.defer = true; // Remove 'defer' to load widget faster (may affect page load time)
-        document.body.appendChild(VG_SCRIPT);
-    })();
-</script>
+    <!-- Chatbot script, remove 'defer' if you want the widget to load faster (will affect website loading) -->
+    <script defer>
+        (function() {
+            window.VG_CONFIG = {
+                ID: "sjuch6uz5a33kbe8", // Agent ID
+                region: 'eu', // 'eu' or 'na' for Europe and North America regions
+                render: 'full-width', // options: 'popup' or 'full-width'
+                stylesheets: [
+                    "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
+                    // Add custom CSS stylesheets here if needed
+                ],
+                // Optional user data - should be removed or updated before use
+                // user: {
+                //     name: 'John Doe', // User's name
+                //     email: 'johndoe@gmail.com', // User's email
+                //     phone: '+1234567890', // User's phone number
+                // },
+                // Optional settings
+                // userID: 'USER_ID', // Custom user ID
+                // autostart: true, // Automatically start the chatbot with a proactive message
+            };
+            var VG_SCRIPT = document.createElement("script");
+            VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
+            VG_SCRIPT.defer = true; // Remove 'defer' if you want the widget to load faster (will affect website loading)
+            document.body.appendChild(VG_SCRIPT);
+        })();
+    </script>
+</body>
+</html>
