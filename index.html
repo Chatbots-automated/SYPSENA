@@ -3,38 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website with Chatbot</title>
-    <style>
-        /* Force the chatbot container to the bottom-right corner and increase its size */
-        #VG_OVERLAY_CONTAINER {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 400px; /* Increase width */
-            height: 600px; /* Increase height */
-            z-index: 9999; /* Ensure it appears above other elements */
-        }
-    </style>
+    <title>Your Website with TIXAE Chatbot</title>
 </head>
 <body>
-    <div id="VG_OVERLAY_CONTAINER">
-        <!-- Chatbot widget renders here -->
+    <div style="width: 500px; height: 500px;" id="VG_OVERLAY_CONTAINER">
+        <!-- Here is where TIXAE Agents renders the widget. -->
+        <!-- Set width, height for 500px as an example after changing render to 'full-width' -->
     </div>
 
     <!-- Chatbot script -->
     <script defer>
         (function() {
             window.VG_CONFIG = {
-                ID: "sjuch6uz5a33kbe8", // Agent ID
-                region: 'eu', // 'eu' or 'na' for Europe and North America regions
-                render: 'bottom-right', // 'bottom-right' to place the chatbot in a fixed position
+                ID: "sjuch6uz5a33kbe8",  // Agent ID
+                region: 'eu', // 'eu' or 'na' for Europe and North America
+                render: 'full-width', // 'popup' or 'full-width' for rendering
                 stylesheets: [
                     "https://vg-bunny-cdn.b-cdn.net/vg_live_build/styles.css",
-                ]
+                    // Add your custom CSS stylesheets if needed
+                    // Example: "/public/your-file.css"
+                ],
+                // Optional user information (uncomment to use)
+                /*
+                user: {
+                    name: 'John Doe', // User's name
+                    email: 'johndoe@gmail.com', // User's email
+                    phone: '+1234567890', // User's phone number
+                }
+                */
+                // Optional user ID and auto-start configuration (uncomment to use)
+                /*
+                userID: 'USER_ID', // Use your own user_id
+                autostart: true, // Autostart the chatbot with proactive message
+                */
             };
             var VG_SCRIPT = document.createElement("script");
             VG_SCRIPT.src = "https://vg-bunny-cdn.b-cdn.net/vg_live_build/vg_bundle.js";
-            VG_SCRIPT.defer = true;
+            VG_SCRIPT.defer = true; // Remove 'defer' if you want widget to load faster
             document.body.appendChild(VG_SCRIPT);
         })();
     </script>
